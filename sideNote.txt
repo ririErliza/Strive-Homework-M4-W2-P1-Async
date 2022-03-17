@@ -1,0 +1,42 @@
+// 2
+const handleSearchQuery = (event) => {
+    const url = "https://api.pexels.com/v1/search?query="
+
+    const query = event.target.value
+    console.log(query)
+
+    fetch (url + query, {
+        method: "GET",
+        headers : {Authorization: "563492ad6f917000010000012c4dc691433747c8a358694a0244321e" } } )
+    .then(response => response.json() )
+    .then(database => {
+      console.log(database)
+        let images =database.photos
+        let cardsWrapper = document.querySelector ("#cardsWrapper")
+
+      cardsWrapper.innerHTML = images.filter(image => image.alt.toLowerCase().includes(query.toLowerCase()))
+        .map(image => `<div class="col-md-4 hideThis">
+        <div class="card mb-4 shadow-sm h-100 py-2">
+                <img src=${image.src.original} class="card-image-top img-fluid" />
+                <div class="card-body">
+                  <p class="card-text">
+                    This is an image.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">
+                        View
+                      </button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary " onclick="hideFunction()">
+                        Hide
+                      </button>
+                    </div>
+                    <small class="text-muted">${image.id}</small>
+                  </div>
+                </div>
+              </div>
+            </div>`).join("")
+
+
+    })
+  }

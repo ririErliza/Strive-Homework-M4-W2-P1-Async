@@ -18,8 +18,8 @@ fetch (url, {
     images.forEach(element => {
         const content=
         `<div class="col-md-4 hideThis">
-        <div class="card mb-4 shadow-sm h-100 py-2">
-                <img src=${element.src.small} class="card-image img-fluid" />
+        <div class="card mb-4 shadow-sm">
+                <img src=${element.src.medium} class="card-image img-fluid" />
                 <div class="card-body">
                   <p class="card-text">
                     This is an image.
@@ -49,7 +49,7 @@ fetch (url, {
 
 /* Load images function for secondary button */
 const loadImages2 = () => {
-    const url = "https://api.pexels.com/v1/search?query=forest"
+    const url = "https://api.pexels.com/v1/search?query=smile"
 
 fetch (url, {
     method: "GET",
@@ -65,8 +65,8 @@ fetch (url, {
     images.forEach(element => {
         const content=
         `<div class="col-md-4 hideThis">
-        <div class="card mb-4 shadow-sm h-100 py-2">
-                <img src=${element.src.small} class="card-image-top img-fluid" />
+        <div class="card mb-4 shadow-sm">
+                <img src=${element.src.medium} class="card-image img-fluid" />
                 <div class="card-body">
                   <p class="card-text">
                     This is an image.
@@ -134,8 +134,8 @@ const searchImages = (query) => {
         images.forEach(element => {
             const content=
             `<div class="col-md-4 hideThis">
-            <div class="card mb-4 shadow-sm h-100 py-2">
-                <img src=${element.src.small} class="card-image-top img-fluid" />
+            <div class="card mb-4 shadow-sm">
+                <img src=${element.src.medium} class="card-image img-fluid" />
                 <div class="card-body">
                   <p class="card-text">
                     This is an image.

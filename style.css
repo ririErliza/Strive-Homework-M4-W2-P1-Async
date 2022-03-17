@@ -51,8 +51,8 @@
   
   /* image card */
 
-  /* .card-image-top{
-      width: 100%;
-      height:40vh;
-      object-fit:cover;
-  } */
+  .card-image {
+      width:100%;
+      height:300px;
+      object-fit: cover;
+  }
